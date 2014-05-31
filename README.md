@@ -49,10 +49,11 @@ ALL COMMANDS ARE COMPULSORY
 	checkpoint;
 	checkpoint_interval(30);
 
-### 2. JRuby
+### 2. JRuby and Ruby
 
 SERIMI is a Ruby application and demands the JRuby version of ruby. We recommend to install JRuby using the [RVM](https://rvm.beginrescueend.com/).
 
+You must use any Jruby with Ruby 1.8.7. It does not work for ruby > 1.8.7.
 ### 3. Gems
 
 After install JRuby, you have to install the following gems:
@@ -108,9 +109,11 @@ If everything is fine, this command will print help information about SERIMI. Be
 Usage: serimi.rb [parameters] 
 
 Example of use: 
-The following example, shows how you can interlink the class Drugs from Sider with DBPedia.
+The following example, shows how you can interlink the class StatesAndTerritoriesOfIndia from Yago with DBPedia.
 
-	ruby serimi.rb -s http://www4.wiwiss.fu-berlin.de/sider/sparql -t http://dbpedia.org/sparql?default-graph-uri=http://dbpedia.org -c http://www4.wiwiss.fu-berlin.de/sider/resource/sider/drugs  
+	ruby serimi.rb -s   http://dbpedia.org/sparql?default-graph-uri=http://dbpedia.org -t http://dbpedia.org/sparql?default-graph-uri=http://dbpedia.org -c http://dbpedia.org/class/yago/StatesAndTerritoriesOfIndia
+
+
 	
 In the example above, the source is the Sider endpoint, the target is the DBPedia endpoint , and the source class to be interlinked is the class Drugs. 
 Notice that the performance of the Sider and DBPedia endpoints may delay the output of SERIMI.
